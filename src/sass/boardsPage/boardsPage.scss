@@ -1,0 +1,212 @@
+@import "../var/_mixins.scss";
+@import "../var/_variables.scss";
+
+$headerHeight: 30px;
+$infoHeight: 25px;
+
+
+.header{
+  position: absolute;
+  min-width: 300px;
+  height: $headerHeight;
+  background-color: #687d8a;
+  top: 0;
+  left: 0;
+  right: 0;
+  @include Flex(row);
+
+  .logo{
+    margin-left: 10px;
+    width: 27px;
+    height: 27px;
+    border-radius: 50%;
+    cursor: pointer;
+
+  }
+  .nav{
+    @include Flex(row);
+
+    .header-list{}
+
+    .search-container {
+      position: relative;
+
+      .material-icons{
+        position: absolute;
+        top: 0;
+        left: 0;
+        font-size: 22px;
+        color: white;
+      }
+      .search {
+        color: white;
+        outline: none;
+        width: 200px;
+        height: $headerHeight - 8px;
+        background-color: #8096a4;
+        border: 0.5px solid #adbec8;
+        border-radius: 3px;
+        padding-top: 3px;
+        padding-bottom: 3px;
+        padding-left: 23px;
+        position: relative;
+        margin-right: 10px;
+
+        &::-webkit-input-placeholder{
+          color: gainsboro;
+        }
+
+        &:focus::-webkit-input-placeholder {
+          color: transparent
+        }
+      }
+    }
+    .user-profile{
+      width: 27px;
+      height: 27px;
+      border-radius: 50%;
+      background-color: black;
+      margin-right: 10px;
+      cursor: pointer;
+    }
+  }
+}
+
+.info{
+  position: absolute;
+  min-width: 300px;
+  height: $infoHeight;
+  background-color: rgba(0, 0, 0, 0.2);
+  top: $headerHeight;
+  left: 0;
+  right: 0;
+}
+
+.field{
+  padding: 5px;
+  position: absolute;
+  min-width: 300px;
+  top: $headerHeight+$infoHeight;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  @include Flex(column);
+
+  .boards{
+    width: 100%;
+    height: calc(100% - 20px);
+    display: flex;
+    justify-content: flex-start;
+    align-items: start;
+    overflow-x: auto;
+
+
+
+    .column-container{
+      max-width: 300px;
+      min-width: 200px;
+      height: 100%;
+      margin-right: 8px;
+      padding: 3px;
+
+      .column{
+        background-color: gainsboro;
+        max-height: 100%;
+        width: 100%;
+        border-radius: 3px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+
+        .column-name{
+          font-size: 10px;
+          font-weight: bold;
+          outline: none;
+          border: none;
+          background-color: transparent;
+          width: 100%;
+          height: 15px;
+          margin-bottom: 5px;
+          padding: 3px;
+          max-width: calc(100% - 10px);
+          margin-top: 5px;
+          color: black;
+        }
+        .task-list{
+          width: 100%;
+          max-height: 100%;
+          overflow-y: auto;
+
+          &::-webkit-scrollbar {
+            width: 6px;
+            background-color: #f9f9fd;
+          }
+
+          &::-webkit-scrollbar-thumb {
+            border-radius: 5px;
+            background-color: #b7bcbc;
+          }
+
+          &::-webkit-scrollbar-track {
+            -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.2);
+            //border-radius: 5px;
+            background-color: #f9f9fd;
+          }
+
+          .task-prev-win{
+            background-color: white;
+            max-width: calc(100% - 5px);
+            min-height: 60px;
+            margin: auto;
+            margin-bottom: 5px;
+            border-radius: 3px;
+            box-shadow: 0 1px 1px #7e7b7b;
+            cursor: pointer;
+
+            &:hover{
+              background-color: #f3f2f2;
+            }
+          }
+        }
+
+        .add-cart-btn{
+          cursor: pointer;
+          font-size: 10px;
+          width: 130px;
+          height: 20px;
+          //padding: 5px;
+          border-radius: 3px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          &:hover{
+            background-color: #bab5b5;
+          }
+        }
+      }
+    }
+  }
+
+  .new-board-btn{
+    width: 100px;
+    height: 20px;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: white;
+    cursor: pointer;
+    //padding: 5px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s all;
+    font-size: 10px;
+
+    &:hover{
+      background-color: rgba(70, 70, 70, 0.6);
+    }
+  }
+
+}
+

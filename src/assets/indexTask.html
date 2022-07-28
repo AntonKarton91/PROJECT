@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div class="app">
+
+        <div class="form-input">
+            <div class="selector">
+                <div class="btn">Регистрация</div>
+                <div class="btn">Авторизация</div>
+            </div>
+            {% form1 %}
+            <form action="{% url 'log' %}" class="field" method="POST">
+                {% csrf_token %}
+                {% for item in form1 %}
+                <input type="text"  placeholder="{{ item.label }}" class="input">
+                {% endfor %}
+            </form>
+        </div>
+
+    </div>
+</body>
+</html>

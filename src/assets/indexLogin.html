@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Super CDR for Deka</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+<img src="{% static 'main/images/bg1.jpg' %}" alt="" class="bg">
+<div class="app">
+
+    <div class="header">
+        <img class="logo" src="{% static 'main/images/logo.ico' %}">
+        <div class="nav">
+            <div class="header-list"></div>
+            <div class="search-container">
+                <input class="search" placeholder="Поиск"/>
+                <i class="material-icons">search</i>
+            </div>
+            <div class="user-profile"></div>
+        </div>
+    </div>
+    <div class="info">
+        <div class="board-name">ДКО</div>
+        <div class="participants-list"></div>
+    </div>
+    <div class="field">
+        <div class="boards">
+            <div class="column-container">
+                <div class="column">
+                    <div class="column-name" contenteditable="true">Новая колонка</div>
+                    <div class="task-list">
+                        <div class="task-prev-win">Карточка</div>
+                    </div>
+                    <div class="add-cart-btn">Добавить карточку</div>
+                </div>
+            </div>
+
+            <div class="column-container">
+                <div class="column">
+                    <div class="column-name" contenteditable="true">Новая колонка</div>
+                    <div class="task-list">
+                        <div class="task-prev-win">Карточка</div>
+
+                        <div class="task-prev-win">Карточка</div>
+                        <div class="task-prev-win">Карточка</div>
+                        <div class="task-prev-win">Карточка</div>
+                        <div class="task-prev-win">Карточка</div>
+                        <div class="task-prev-win">Карточка</div>
+                        <div class="task-prev-win">Карточка</div>
+                        <div class="task-prev-win">Карточка</div>
+                        <div class="task-prev-win">Карточка</div>
+                        <div class="task-prev-win">Карточка</div>
+
+                    </div>
+                    <div class="add-cart-btn">Добавить карточку</div>
+                </div>
+            </div>
+
+        </div>
+        <div class="new-board-btn">Добавить колонку</div>
+    </div>
+
+
+</div>
+</body>
+</html>
